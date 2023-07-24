@@ -1,0 +1,64 @@
+package com.example.demo.controller;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.demo.entity.Employee;
+import com.example.demo.serviceimpl.ModelImpl;
+
+@RestController
+public class Controller1
+{
+	@Autowired
+	ModelImpl model;
+
+	@PostMapping("/saved")
+	Employee save(@RequestBody Employee e)
+	{
+		Employee add1= model.add(e);
+		return add1;
+	}
+	
+	@GetMapping("/get")
+	List<Employee> getall()
+	{
+		List<Employee> get = model.getall();
+		return get;
+	}
+	
+	@GetMapping("/gett/{id}")
+	Employee getById(@PathVariable long id)
+	{
+		return model.getById(id);
+	}
+	
+	@PutMapping("/update/{id}")
+	Employee update( @PathVariable long id,@RequestBody Employee e)
+	{
+		return model.update(id,e);
+	}
+	
+	@DeleteMapping("/delete/{id}")
+	String delete( @PathVariable long id)
+	{
+		model.delete(id);
+		return "data deleted";
+		
+	}
+//	@GetMapping("/getByIdAndPh/{id}/{ph}")
+//	public Employee getByIdAndPh(@PathVariable long id,@PathVariable long ph) {
+//		Employee e = model.getByIdAndPh(id,ph);
+//		return e;
+//		
+//	}
+}

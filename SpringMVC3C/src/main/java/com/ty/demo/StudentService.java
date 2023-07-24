@@ -1,0 +1,62 @@
+package com.ty.demo;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.EntityTransaction;
+import javax.persistence.Persistence;
+
+import org.springframework.stereotype.Service;
+@Service
+public class StudentService 
+{
+	EntityManagerFactory emf = Persistence.createEntityManagerFactory("one");
+	EntityManager em = emf.createEntityManager();
+	EntityTransaction et = em.getTransaction();
+	
+	public Student addStudent(Student data) 
+	{
+		et.begin();
+		em.persist(data);
+		et.commit();
+		return data;
+	}
+	
+	public Student getStudentById(Integer id) 
+	{
+		
+		return em.find(Student.class, id);
+	}
+	
+	public List<Student> getAllStudents() {
+		javax.persistence.Query query = em.createQuery("from Student ");
+		List<Student> students = query.getResultList();
+		return students;
+	}
+	
+	
+	public void deleteStudentById(int id) 
+	{
+		et.begin();
+        Student student = em.find(Student.class, id);
+        if (student != null) 
+        {
+            em.remove(student);
+        }
+        et.commit();
+	}
+	
+	
+	public Student updateStudent(Student data) 
+	{
+		et.begin();
+		Student update = em.merge(data);
+		et.commit();
+		return update;
+	}
+	
+	
+	
+
+}

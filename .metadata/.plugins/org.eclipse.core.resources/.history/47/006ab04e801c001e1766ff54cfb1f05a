@@ -1,0 +1,72 @@
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+	xmlns="http://camel.apache.org/schema/spring"
+
+	xsi:schemaLocation="
+
+            http://camel.apache.org/schema/spring
+
+            http://camel.apache.org/schema/spring/camel-spring.xsd">
+
+	<route id="xml-route">
+
+		<from uri="timer:from-xml-timer?period=1000&amp;repeatCount=1" />
+
+		<log loggingLevel="ERROR" message="hello ${body}"></log>
+
+		<log loggingLevel="ERROR" message="headers ${headers}"></log>
+
+		<log message="Hello XML!" />
+
+
+	</route>
+
+	<route id="file-route-one">
+
+		<from uri="timer:paycorp?period=1000&amp;repeatCount=1" />
+		<process ref="fileProcessor"></process>
+
+
+		<!-- <log message="file extension ${file:name:ext}"></log> -->
+
+		<setHeader name="name">
+			<simple>Hello</simple>
+		</setHeader>
+		<log message="${headers}" />
+
+		<to uri="bean:studentService?method=get()"></to>
+		<log
+			message="the student details are ${body} Gender--${body.gender}"></log>
+
+		<setHeader name="genderVal">
+			<simple>${body.gender}</simple>
+		</setHeader>
+		<log message="${body.gender}"></log>
+
+		 <setHeader name="genderKey"> 
+		 <method ref="studentService" method="display(${body.gender)"></method>
+			</setHeader>
+			<log message="${body}"></log>
+
+		<choice>
+			<when>
+				<simple>${header.gender} == 'M'</simple>
+				<to uri="direct:a"></to>
+				<log message="inside the if loop"></log>
+			</when>
+			<when>
+				<simple>${header.gender} == 'F'</simple>
+				<to uri="direct:a"></to>
+				<log message="inside the if loop"></log>
+			</when>
+
+			<otherwise>
+				<log message="Noooo"></log>
+			</otherwise>
+		</choice>
+
+	</route>
+
+
+
+</routes>

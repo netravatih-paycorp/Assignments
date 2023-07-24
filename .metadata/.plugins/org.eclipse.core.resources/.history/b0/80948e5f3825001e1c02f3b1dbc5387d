@@ -1,0 +1,32 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+ <table>
+<tr>
+<th>Student-Id</th>
+<th>Student-Name</th>
+<th>Student-Gender</th>
+<th>Student-Branch</th>
+<th>Student-DOB</th>
+</tr>
+
+<tr>
+<td>${id}</td>
+<td>${name}</td>
+<td>${gender}</td>
+<td>${branch}</td>
+<td>${DOB}</td>
+</tr>
+</table>
+
+</body>
+ 
+
+</html>

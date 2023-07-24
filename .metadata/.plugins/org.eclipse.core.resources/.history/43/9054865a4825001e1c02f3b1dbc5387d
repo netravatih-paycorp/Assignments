@@ -1,0 +1,12 @@
+package com.example.demo;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+
+public class SController 
+{
+	@RequestMapping("/h")
+    public String home()
+    {
+    	 return "home.jsp";
+    }
+}

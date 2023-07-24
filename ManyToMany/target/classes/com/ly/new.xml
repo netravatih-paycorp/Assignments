@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+    
+<bean name="s1" class="com.ly.Student" p:name="veena" p:phno="7090815418" p:email="veenu@gmail.com">
+<property name="courses">
+<list>
+<ref bean="c1"></ref>
+<ref bean="c2"></ref>
+</list>
+</property>
+</bean>
+
+<bean name="s2" class="com.ly.Student" p:name="nanda" p:phno="9945301290" p:email="nanda@gmail.com">
+<property name="courses">
+<list>
+<ref bean="c1"></ref>
+<ref bean="c2"></ref>
+<ref bean="c3"></ref>
+</list>
+</property>
+</bean>
+
+<bean name="s3" class="com.ly.Student" p:name="veeru" p:phno="7090904590" p:email="veeru@gmail.com">
+<property name="courses">
+<list>
+<ref bean="c1"></ref>
+<ref bean="c3"></ref>
+</list>
+</property>
+</bean>
+
+<bean name="c1" class="com.ly.Course" p:cname="Hibernate" p:trainer="venkatesh sir" p:fees="5000">
+<property name="student">
+<list>
+<ref bean="s1"></ref>
+<ref bean="s2"></ref>
+<ref bean="s3"></ref>
+</list>
+</property>
+</bean>
+
+<bean name="c2" class="com.ly.Course" p:cname="Spring" p:trainer="Akshata mam" p:fees="8000">
+<property name="student">
+<list>
+<ref bean="s2"></ref>
+<ref bean="s3"></ref>
+</list>
+</property>
+</bean>
+
+<bean name="c3" class="com.ly.Course" p:cname="Aptitude" p:trainer="Shridhar sir" p:fees="5000">
+<property name="student">
+<list>
+<ref bean="s1"></ref>
+<ref bean="s3"></ref>
+</list>
+</property>
+</bean>
+
+</beans>

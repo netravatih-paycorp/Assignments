@@ -1,0 +1,88 @@
+<html>
+<head>
+<script>
+function validateDate() 
+{
+	 var input= document.getElementById("DOB").value;
+	 
+	 var today = new Date();
+	 var selectedDate = new Date(input);
+	    if (selectedDate >= today) {
+	        alert("Invalid date of birth..!");
+	       
+	    }
+	    else
+	    	{
+	    	alert("valid date of Birth..")
+	    	document.getElementById("saveForm").submit();
+	    	}
+}
+</script>
+
+<style>
+.h{
+        background-color: white;
+        border: 2px solid black;
+        height:350px;
+        width:300px;
+        align:center;
+        
+        
+}
+
+button
+      {
+        padding: 8px 20px;
+        margin-left: 90px;
+        
+      }
+      
+      label{
+         margin-left: 8px;
+         
+       }
+</style>
+
+</head>
+
+<body>
+<div class="h">
+    <form action="save" method="post" id="saveForm" >
+                 <h2 style="margin-left:15px;"> Students Details</h2>
+	
+	<label>Name:</label>	
+    <input type="text" name="name" placeholder="Enter name"> 
+		<br> 
+		<br><br>
+		
+		<label>Gender:</label>
+		<label>Male</label>	<input type="radio" name="gender" value="male"> 
+		<label>Female</label>	<input type="radio" name="gender" value="female"> 
+		 <br> 
+		 <br><br>
+		 
+		 <label>Branch:</label>
+		 <select  name="branch" >
+           <option>Computer Science</option>
+           <option>Electrical Engineering</option>
+           <option >Mechanical Engineering</option>
+           <option>Civil Engineering</option>
+           <option>E&C Engineering</option>
+           </select>
+       <br>
+       <br><br>
+       
+       <label>Date of Birth:</label>
+		 <input type="date" id="DOB" name="DOB" >
+        <br> 
+        <br><br>
+        
+		<button onClick="validateDate()" type="button">submit</button>
+	</form> 
+	
+</div>
+	<br><br>
+	
+   <a href="get.jsp">clickhere</a>
+</body>
+</html>

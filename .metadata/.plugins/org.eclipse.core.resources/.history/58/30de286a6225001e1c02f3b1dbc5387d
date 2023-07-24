@@ -1,0 +1,28 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8" isELIgnored="false"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div class="id">
+		<form action="getid">
+			<h1>Enter the Student Id:</h1>
+			<input type="text" name="id" placeholder="enter the id"> <br>
+			<br>
+			<button>submit</button>
+			<br>
+			<br><br>
+			<h1>Student Details</h1>
+			<h2> Id:${data.id}</h2>
+			<h2> Name:${data.name}</h2>
+			<h2> Gender:${data.gender}</h2>
+			<h2> Branch:${data.branch}</h2>
+			<h2> id:${data.DOB}</h2>
+		</form>
+	</div>
+
+</body>
+</html>

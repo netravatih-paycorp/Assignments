@@ -1,0 +1,93 @@
+package com.example.demo;
+
+
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import jakarta.servlet.http.HttpSession;
+
+@Controller
+public class SController 
+{
+	@Autowired
+	SRepository repo;
+
+	@RequestMapping("/h")
+	public String home()
+	{
+		return "home.jsp";
+	}
+
+	@RequestMapping("/save")
+	public String addStudent(Student std)
+	{
+		repo.save(std);
+		return "home.jsp";
+	}
+
+	@RequestMapping("/f")
+	String find()
+	{
+		return "details.jsp";
+	}
+
+	@RequestMapping("/detailsById")
+	String detailsById( HttpSession h1,Integer id )
+	{
+		Student std= repo.findById(id).orElse(null);
+		if(std!=null)
+		{
+			h1.setAttribute("id", std.getId());
+			h1.setAttribute("name", std.getName());
+			h1.setAttribute("gender", std.getGender());
+			h1.setAttribute("branch", std.getBranch());
+			h1.setAttribute("DOB", std.getDOB());
+			return "details.jsp";
+		}
+		else
+		{
+			h1.setAttribute("message", "Invalid Id..!") ;
+			return "details.jsp";
+		}
+	}
+
+	@RequestMapping("/d")
+	String deleteStudent()
+	{
+		return "delete.jsp";
+	}
+
+
+	@RequestMapping("/deleteById")
+	String deleteById(Integer id,HttpSession h1)
+	{
+		Student e= repo.findById(id).orElse(null);
+		if(e!=null)
+		{
+			repo.deleteById(id);
+			h1.setAttribute("message", "Student with id : "+id+" got deleted") ;
+		}
+		else
+		{
+			h1.setAttribute("message", "Invalid Id..!") ; 
+		}
+
+		return "delete.jsp";
+	}
+	
+	@RequestMapping("/u")
+	String updateStudent()
+	{
+		return"update.jsp";
+	}
+	
+	@RequestMapping("")
+	String Update(Student std,HttpSession h1,Integer id)
+	{
+		Student student = repo.findById(std.getId());
+		return"update.jsp";
+	}
+	
+}

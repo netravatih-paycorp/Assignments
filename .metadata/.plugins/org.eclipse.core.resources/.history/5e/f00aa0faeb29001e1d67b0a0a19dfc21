@@ -1,0 +1,70 @@
+package com.example.demo.serviceimpl;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.example.demo.entity.Employee;
+import com.example.demo.repo.EmployeeRepo;
+import com.example.demo.service.Model;
+
+@Service
+public class ModelImpl implements Model
+{
+	@Autowired
+	EmployeeRepo repo;
+
+	@Override
+	public Employee add(Employee e) 
+	{
+		return repo.save(e);
+		
+	}
+
+	@Override
+	public List<Employee> getall() {
+		
+		return repo.findAll();
+	}
+
+	@Override
+	public Employee getById( long id) {
+		Optional<Employee> employee=repo.findById(id);
+		if(employee.isPresent())
+		{
+		return employee.get();
+		}
+		return null ;
+	}
+
+	@Override
+	public Employee update(long id,Employee e) {
+		Optional<Employee> employee= repo.findById(id);
+		if(employee.isPresent())
+		{
+	     Employee emp=employee.get();
+	     emp.setName(e.getName());
+	     emp.setPhno(e.getPhno());
+	      Employee obj=repo.save(emp);
+	      return obj;
+		}
+		return null;
+	}
+
+	@Override
+	public void delete(@PathVariable long id) {
+		
+		repo.deleteById(id);
+	}
+
+//	public Employee getByIdAndPh(long id, long ph) {
+//		System.out.println(repo.findByIdGreaterThan(2));
+//		return repo.findByIdAndPhno(id,ph);
+//	}
+
+}

@@ -1,0 +1,57 @@
+package com.ty.demo;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+@Controller
+public class StudentController {
+	@Autowired
+	StudentService service;
+
+
+	@RequestMapping("/")
+	public String defaultPage() 
+	{
+		return "home.jsp";
+
+	}
+	@RequestMapping("/save")
+	public ModelAndView addStudent(@ModelAttribute Student data) {
+		ModelAndView s= new ModelAndView();
+		s.setViewName("home.jsp");
+		s.addObject("data",service.addStudent(data) );
+		return s;
+
+	}
+	public ModelAndView updateStudent(@ModelAttribute Student data) {
+		ModelAndView s= new ModelAndView();
+		s.setViewName("home.jsp");
+		s.addObject("data",service.updateStudent(data) );
+		return s;
+
+	}
+	@RequestMapping("/get")
+	public ModelAndView getStudents() {
+		ModelAndView s= new ModelAndView();
+		s.setViewName("details.jsp");
+		s.addObject("data",service.getStudents() );
+		return s;	
+	}
+	@RequestMapping("/getById")
+	public ModelAndView getStudentById() {
+		ModelAndView s= new ModelAndView();
+		s.setViewName("get.jsp");
+		s.addObject("data",service.getStudentById() );
+		return s;	
+	}
+	@RequestMapping("/delete")
+	public ModelAndView deleteStudentById() {
+		ModelAndView s= new ModelAndView();
+		s.setViewName("details.jsp");
+		s.addObject("data",service.deleteStudentById() );
+		return s;	
+	}
+}

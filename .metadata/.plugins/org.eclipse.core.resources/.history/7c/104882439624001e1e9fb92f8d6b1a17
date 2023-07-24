@@ -1,0 +1,54 @@
+<html>
+<head>
+<script>
+function validateDate() 
+{
+	 var input= document.getElementById("DOB").value;
+	 
+	 var today = new Date();
+	 var selectedDate = new Date(dobInput);
+	    if (selectedDate >= today) {
+	        alert("Invalid date of birth! The date cannot be in the future.");
+	       
+	    }
+	    else
+	    	{
+	    	alert("valid date of Birth.")
+	    	}
+}
+</script>
+
+</head>
+
+<body>
+    <form action="save" method="post">
+    
+		Name: <input type="text" name="name" placeholder="Enter name"> 
+		<br> 
+		<br>
+		
+		Gender: <label>Male</label>	<input type="radio" name="gender" value="male"> 
+		<label>Female</label>	<input type="radio" name="gender" value="female"> 
+		 <br> 
+		 <br>
+		 
+		Branch: <select  name="branch" >
+		   <option> Choose </option>
+           <option>Computer Science</option>
+           <option>Electrical Engineering</option>
+           <option >Mechanical Engineering</option>
+           <option>Civil Engineering</option>
+           <option>E&C Engineering</option>
+           </select>
+       <br>
+       <br>
+       
+		Date Of Birth: <input type="date" id="DOB" name="DOB" >
+        <br> 
+        <br>
+		<button onClick="validateDate()" type="button">submit</button>
+	</form> 
+	
+
+</body>
+</html>

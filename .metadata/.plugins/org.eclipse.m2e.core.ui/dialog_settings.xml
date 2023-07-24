@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="MavenProjectImportWizardPage">
+		<list key="rootDirectory">
+			<item value="/home/dell/Downloads/Project1"/>
+			<item value="/home/dell/Downloads/RestTemplate/src/main/java/com/demo/example/resttemplate"/>
+			<item value="/home/dell/Downloads/Employee-Database-Project"/>
+			<item value="/home/dell/Downloads/SpringMvc"/>
+			<item value="/home/dell/Downloads/MVC"/>
+			<item value="/home/dell/Desktop/Spring/DependencyInjectionType"/>
+			<item value="/home/dell/Desktop/Spring/OnetoOne"/>
+			<item value="/home/dell/Downloads/RestTemplate"/>
+			<item value="/home/dell/Downloads/EmployeeDB"/>
+			<item value="/home/dell/Downloads/H2DatabaseApplication"/>
+			<item value="/home/dell/Downloads/MVCApplication"/>
+			<item value="/home/dell/Downloads/DependencyInjectionType"/>
+			<item value="/home/dell/Downloads/Project"/>
+			<item value="/home/dell/Downloads/ConstructorInjection"/>
+			<item value="/home/dell/Downloads/Apache-Camel Demo (1)/Apache-Camel-Demo"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="MavenCheckoutLocationPage">
+		<list key="scmUrl">
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="MavenProjectWizardLocationPage">
+		<list key="location">
+			<item value="/home/dell/Desktop/Spring/SpringMVC1"/>
+			<item value="/home/dell/Desktop/Spring/ManyToMany"/>
+			<item value="/home/dell/Desktop/Spring/OneToMany"/>
+			<item value="/home/dell/Desktop/Spring/OnetoOne"/>
+			<item value="/home/dell/Desktop/Spring/Servers"/>
+			<item value="/home/dell/Downloads/Apache-Camel Demo (1)/Apache-Camel-Demo"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="org.eclipse.m2e.core.pom.overview">
+	</section>
+	<section name="org.eclipse.m2e.core.pom.dependencies">
+	</section>
+	<section name="MavenProjectWizardArchetypePage">
+		<item key="catalog" value="All Catalogs"/>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="Maven2ProjectWizardArchifactPage">
+		<list key="package">
+			<item value="com.ly.SpringMVC2"/>
+		</list>
+		<list key="groupId">
+			<item value="com.ly"/>
+		</list>
+		<list key="artifactId">
+			<item value="SpringMVC2"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+	</section>
+	<section name="MavenProjectWizardArtifactPage">
+		<list key="groupId">
+		</list>
+		<list key="name">
+		</list>
+		<list key="artifactId">
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+	</section>
+</section>

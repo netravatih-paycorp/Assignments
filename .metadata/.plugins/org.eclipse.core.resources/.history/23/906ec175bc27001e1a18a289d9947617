@@ -1,0 +1,24 @@
+package com.demo.example.resttemplate;
+
+import org.springframework.stereotype.Component;
+import org.springframework.web.client.RestTemplate;
+
+@Component
+public class Template 
+{
+	RestTemplate template = new RestTemplate();
+	
+	public Model consume(int id) 
+	{
+		System.out.println("hi");
+//		RestTemplate template = new RestTemplate();
+		Model model = template.getForObject("http://localhost:8080/g/"+id, Model.class);
+		return model;
+	}
+	
+	public Model get(String name)
+	{
+		Model m=template.getForObject("http://localhost:8080/name/"+name, Model.class);
+		return m;
+	}
+}

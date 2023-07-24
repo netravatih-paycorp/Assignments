@@ -1,0 +1,20 @@
+package com.ty.demo;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+@Controller
+public class StudentController {
+	@RequestMapping("/")
+public String defaultPage() {
+	return "home.jsp";
+	
+}
+	public ModelAndView addStudent(@ModelAttribute Student data) {
+	ModelAndView s= new ModelAndView();
+	s.setViewName("home.jsp");
+	
+	}
+}

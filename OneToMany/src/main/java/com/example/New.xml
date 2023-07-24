@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+  
+ <bean name="s3" class="com.example.SIM" p:name="Vadafone" p:cost="299">
+ <property name="mobile">
+ <ref bean="m1"></ref>
+ </property>
+ </bean> 
+ 
+ <bean name="s4" class="com.example.SIM" p:name="BSNL" p:cost="350">
+ <property name="mobile">
+ <ref bean="m1"></ref>
+ </property>
+ </bean> 
+ 
+     
+ <bean name="m1" class="com.example.Mobile" p:brand="Samsung" p:cost="25000">
+ <property name="sims">
+ <list>
+ <ref bean="s3"></ref>
+ <ref bean="s4"></ref>
+ </list>
+ </property>
+ </bean>
+ 
+
+   
+    
+    
+ </beans>

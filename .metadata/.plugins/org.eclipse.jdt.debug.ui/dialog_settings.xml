@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item key="org.eclipse.jdt.debug.ui.jre_preference_page_context.columnWidth0" value="62"/>
+	<item key="org.eclipse.jdt.debug.ui.jre_preference_page_context.columnWidth1" value="746"/>
+	<item key="org.eclipse.jdt.debug.ui.jre_preference_page_context.columnWidth2" value="96"/>
+	<item key="org.eclipse.jdt.debug.ui.jre_preference_page_context.sortColumn" value="1"/>
+	<section name="org.eclipse.jdt.debug.ui.MAIN_METHOD_SELECTION_DIALOG">
+		<item key="ShowStatusLine" value="true"/>
+		<item key="History" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0A;&lt;History&gt;&#x0A;&lt;historyRootNode&gt;&#x0A;&lt;infoNode&gt;=MVCApplication/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&amp;lt;com.exam.demo{MvcApplication.java[MvcApplication&lt;/infoNode&gt;&#x0A;&lt;infoNode&gt;=H2DatabaseApplication/src\/main\/java&amp;lt;com.jsp.example.H2DatabaseApplication{H2DatabaseApplication.java[H2DatabaseApplication&lt;/infoNode&gt;&#x0A;&lt;infoNode&gt;=Apache-Camel-Demo/src\/main\/java&amp;lt;com.example.ApacheCamel.Demo{ApacheCamelDemoApplication.java[ApacheCamelDemoApplication&lt;/infoNode&gt;&#x0A;&lt;infoNode&gt;=Project1/src\/main\/java&amp;lt;com.example.demo{Project1Application.java[Project1Application&lt;/infoNode&gt;&#x0A;&lt;infoNode&gt;=MVC/src\/main\/java&amp;lt;com.example.MVC{MvcApplication.java[MvcApplication&lt;/infoNode&gt;&#x0A;&lt;infoNode&gt;=Employee-Database-Project/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&amp;lt;com.example.demo{EmployeeDatabaseProjectApplication.java[EmployeeDatabaseProjectApplication&lt;/infoNode&gt;&#x0A;&lt;infoNode&gt;=EmployeeDB/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&amp;lt;com.example{EmployeeDbApplication.java[EmployeeDbApplication&lt;/infoNode&gt;&#x0A;&lt;infoNode&gt;=RestTemplate/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&amp;lt;com.demo.example{RestTemplateApplication.java[RestTemplateApplication&lt;/infoNode&gt;&#x0A;&lt;infoNode&gt;=SpringMvc/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&amp;lt;com.example.demo{SpringMvcApplication.java[SpringMvcApplication&lt;/infoNode&gt;&#x0A;&lt;/historyRootNode&gt;&#x0A;&lt;/History&gt;"/>
+		<section name="DialogBoundsSettings">
+			<item key="DIALOG_HEIGHT" value="500"/>
+			<item key="DIALOG_WIDTH" value="600"/>
+			<item key="DIALOG_X_ORIGIN" value="626"/>
+			<item key="DIALOG_Y_ORIGIN" value="189"/>
+			<item key="DIALOG_FONT_NAME" value="1|Ubuntu|11.0|0|GTK|1|"/>
+		</section>
+	</section>
+	<section name="expressionHistory">
+	</section>
+	<section name="conditionHistory">
+	</section>
+</section>

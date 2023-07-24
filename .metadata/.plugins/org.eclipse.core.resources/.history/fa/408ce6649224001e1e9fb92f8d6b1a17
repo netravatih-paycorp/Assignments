@@ -1,0 +1,49 @@
+<html>
+<head>
+<script>
+function validateDate() {
+  var dateInput = document.getElementById("DOB").value;
+  var datePattern = /^\d{2}\/\d{2}\/\d{4}$/;
+
+  if (!datePattern.test(dateInput)) {
+    alert("Invalid date format! Please use dd/mm/yyyy.");
+  } else {
+    alert("Date is valid!");
+  }
+}
+</script>
+
+</head>
+
+<body>
+    <form action="save" method="post" onsubmit="return validateDate()">
+    
+		Name: <input type="text" name="name" placeholder="Enter name"> 
+		<br> 
+		<br>
+		
+		Gender: <label>Male</label>	<input type="radio" name="gender" value="male"> 
+		<label>Female</label>	<input type="radio" name="gender" value="female"> 
+		 <br> 
+		 <br>
+		 
+		Branch: <select  name="branch" >
+		   <option> Choose </option>
+           <option>Computer Science</option>
+           <option>Electrical Engineering</option>
+           <option >Mechanical Engineering</option>
+           <option>Civil Engineering</option>
+           <option>E&C Engineering</option>
+           </select>
+       <br>
+       <br>
+       
+		Date Of Birth: <input type="date" name="date of birth" >
+        <br> 
+        <br>
+		<input type="submit" value="save">
+	</form> 
+	
+
+</body>
+</html>

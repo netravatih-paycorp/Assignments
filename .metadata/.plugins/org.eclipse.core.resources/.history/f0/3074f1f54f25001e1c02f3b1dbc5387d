@@ -1,0 +1,41 @@
+package com.stu;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.EntityTransaction;
+import javax.persistence.Persistence;
+import javax.persistence.Query;
+
+import org.springframework.stereotype.Repository;
+
+@Repository
+public class StudentRepo 
+{
+
+	EntityManagerFactory emf = Persistence.createEntityManagerFactory("one");
+	EntityManager em = emf.createEntityManager();
+	EntityTransaction et = em.getTransaction();
+
+	StudentData savaData(StudentData studentData) 
+	{
+		et.begin();
+		em.persist(studentData);
+		et.commit();
+		return studentData;
+
+    }
+	
+	public StudentData getById(int id)
+	{
+		return em.find(StudentData.class, id);
+	}
+	
+	public List<StudentData> getAllStudents() {
+		Query query = em.createQuery("select n from StudentData n");
+		List<StudentData> students = query.getResultList();
+		return students;
+	}
+
+}

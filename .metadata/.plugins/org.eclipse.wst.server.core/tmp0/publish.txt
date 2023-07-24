@@ -1,0 +1,4 @@
+#Tomcat publish data
+#Mon Jul 24 17:06:27 IST 2023
+org.eclipse.jst.j2ee.server\:/binary\:/home/dell/.m2/repository/org/springframework/spring-web/5.3.18/spring-web-5.3.18.jar=WEB-INF/lib/spring-web-5.3.18.jar
+org.eclipse.jst.j2ee.server\:/binary\:/home/dell/.m2/repository/org/apache/tomcat/tomcat-jasper/9.0.70/tomcat-jasper-9.0.70.jar=WEB-INF/lib/tomcat-jasper-9.0.70.jar

@@ -1,0 +1,35 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+ <table>
+<tr>
+<th>Student-Id</th>
+<th>Student-Name</th>
+<th>Student-Gender</th>
+<th>Student-Branch</th>
+<th>Student-DOB</th>
+</tr>
+
+<c:forEach var="std" items="${studentsData}">
+					<tr>
+						<td>${std.getId()}</td>
+						<td>${std.getName()}</td>
+						<td>${std.getGender}</td>
+						<td>${std.getBranch()}</td>
+						<td>${std.getDOB}</td>
+					</tr>
+</c:forEach>
+
+</table>
+
+</body>
+ 
+
+</html>

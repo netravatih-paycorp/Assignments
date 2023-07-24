@@ -1,0 +1,49 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+     <h1>update Student</h1>
+     <div> 
+    <form action="update" method="post" >
+                 <h2 style="margin-left:15px;"> students details</h2>
+	
+	<label>name:</label>	
+    <input type="text" name="name" placeholder="enter name"> 
+		<br> 
+		<br><br>
+		
+		<label>gender:</label>
+		<label>male</label>	<input type="radio" name="gender" value="male"> 
+		<label>female</label>	<input type="radio" name="gender" value="female"> 
+		 <br> 
+		 <br><br>
+		 
+		 <label>branch:</label>
+		 <select  name="branch" >
+		   <option> choose </option>
+           <option>computer science</option>
+           <option>electrical engineering</option>
+           <option >mechanical engineering</option>
+           <option>civil engineering</option>
+           <option>e&c engineering</option>
+           </select>
+       <br>
+       <br><br>
+       
+       <label>date of birth:</label>
+		 <input type="date" id="dob" name="dob" >
+        <br> 
+        <br><br>
+        
+		<button  type="submit">submit</button>
+	</form> 
+	
+	</div>
+	 
+</body>
+</html>

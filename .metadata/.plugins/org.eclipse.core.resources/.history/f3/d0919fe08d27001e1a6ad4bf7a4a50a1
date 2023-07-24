@@ -1,0 +1,108 @@
+package com.stu;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
+
+@Controller
+public class StuController {
+
+	@RequestMapping("/")
+	public ModelAndView home() {
+		ModelAndView modelAndView = new ModelAndView();
+		modelAndView.setViewName("home.jsp");
+		return modelAndView;
+	}
+
+	@Autowired
+	private StudentRepo repo;
+
+	@RequestMapping("/save")
+	public ModelAndView saveData(@ModelAttribute StudentData data) {
+		ModelAndView modelAndView = new ModelAndView();
+		modelAndView.setViewName("home.jsp");
+		StudentData data2 = repo.savaData(data);
+		modelAndView.addObject("student", data2);
+		return modelAndView;
+	}
+
+	@RequestMapping("/get")
+	public ModelAndView getAll() {
+		ModelAndView view = new ModelAndView();
+		view.setViewName("details.jsp");
+		view.addObject("data", repo.getAllStudents());
+		return view;
+
+	}
+	
+	@RequestMapping("/find")
+	String findStudent() {
+		return "get.jsp";
+	}
+
+	@RequestMapping("/getid")
+	public ModelAndView getById(@RequestParam int id) {
+		ModelAndView view = new ModelAndView();
+		view.setViewName("get.jsp");
+		view.addObject("data", repo.getById(id));
+		return view;
+	}
+	
+	@RequestMapping("/delete")
+    public ModelAndView deleteById(@RequestParam int id) {
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("details.jsp");
+        repo.deleteById(id);
+        modelAndView.setViewName("redirect:/get");
+        return modelAndView;
+    }
+	
+	@RequestMapping("/update")
+	//RequestParam -> It is used to extract the value of the "id" parameter from the request URL. 
+	public ModelAndView updatePage(@RequestParam int id)
+	{
+		ModelAndView view = new ModelAndView();
+		view.setViewName("update.jsp");
+		StudentData std = repo.getById(id);
+		view.addObject("data", std);
+		
+		return view;
+		 
+	}
+	
+	@RequestMapping("/updateStudent")
+	public ModelAndView updateStudent(@ModelAttribute StudentData std)
+	{
+		ModelAndView view = new ModelAndView();
+		view.setViewName("details.jsp");
+		repo.updateStudent(std);
+		view.setViewName("redirect:/get");
+		return view;
+		
+	}
+	
+	@RequestMapping("/b")
+	String get()
+	{
+		return "branch.jsp";
+	}
+	
+	@RequestMapping("/branch")
+	public ModelAndView get(@RequestParam String branch)
+	{
+		ModelAndView view = new ModelAndView();
+		view.setViewName("branch.jsp");
+		StudentData s = repo.getByBranch(branch);
+		view.addObject("data", s);
+		return view;
+		
+		
+	}
+
+
+	
+}

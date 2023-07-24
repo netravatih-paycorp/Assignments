@@ -1,0 +1,79 @@
+package com.stu;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+public class StudentData 
+{
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int id;
+	private String name;
+	private String gender;
+	private String branch; 
+	private String DOB;
+	
+	
+
+	public StudentData(int id, String name, String gender, String branch, String dOB)
+	{
+		super();
+		this.id = id;
+		this.name = name;
+		this.gender = gender;
+		this.branch = branch;
+		DOB = dOB;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getGender() {
+		return gender;
+	}
+
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+
+	public String getBranch() {
+		return branch;
+	}
+
+	public void setBranch(String branch) {
+		this.branch = branch;
+	}
+
+	public String getDOB() {
+		return DOB;
+	}
+
+	
+	public void setDOB(String dOB) {
+		DOB = dOB;
+	}
+
+	@Override
+	public String toString() {
+		return "StudentData [id=" + id + ", name=" + name + ", gender=" + gender + ", branch=" + branch + ", DOB=" + DOB
+				+ "]";
+	}	
+
+
+}
